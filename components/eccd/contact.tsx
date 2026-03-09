@@ -5,13 +5,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "123 Learning Lane, Happy Valley, Education District 12345",
+    content: "Babena, Thimphu",
     color: "bg-sky",
   },
   {
     icon: Phone,
     title: "Call Us",
-    content: "+1 (555) 123-4567",
+    content: "17571350",
     color: "bg-coral",
   },
   {
@@ -65,7 +65,7 @@ export function Contact() {
           <Card className="border-0 shadow-xl rounded-3xl overflow-hidden h-[400px] lg:h-auto">
             <CardContent className="p-0 h-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215266754809!2d-73.98784492404!3d40.75798833540!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1709900000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3537.8!2d89.637361!3d27.501111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDMwJzA0LjAiTiA4OcKwMzgnMTQuNSJF!5e0!3m2!1sen!2s!4v1709900000000!5m2!1sen!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "300px" }}

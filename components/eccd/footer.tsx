@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Star, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Instagram, MessageCircle } from "lucide-react"
+import { SiTiktok } from "react-icons/si"
 
 const quickLinks = [
   { href: "#about", label: "About Us" },
@@ -14,8 +16,8 @@ const quickLinks = [
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: MessageCircle, href: "#", label: "WhatsApp" },
+  { icon: SiTiktok, href: "#", label: "TikTok", isReactIcon: true },
 ]
 
 export function Footer() {
@@ -26,8 +28,14 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-sky flex items-center justify-center">
-                <Star className="w-5 h-5 text-white fill-white" />
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/marpas logo mark.png"
+                  alt="Marpa's Montessori Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-bold text-background">
                 Marpa's Montessori
@@ -37,16 +45,19 @@ export function Footer() {
               Nurturing young minds for a bright future. We provide quality early childhood care and education in a safe, loving environment.
             </p>
             <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-background/10 hover:bg-sky transition-colors flex items-center justify-center"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </Link>
-              ))}
+              {socialLinks.map((social) => {
+                const Icon = social.icon
+                return (
+                  <Link
+                    key={social.label}
+                    href={social.href}
+                    className="w-10 h-10 rounded-full bg-background/10 hover:bg-sky transition-colors flex items-center justify-center"
+                    aria-label={social.label}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </Link>
+                )
+              })}
             </div>
           </div>
 
@@ -71,10 +82,9 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Info</h3>
             <div className="space-y-3 text-background/70">
-              <p>123 Learning Lane</p>
-              <p>Happy Valley, ED 12345</p>
-              <p>+1 (555) 123-4567</p>
-              <p>hello@littlestars-eccd.com</p>
+              <p>Babena, Thimphu</p>
+              <p>17571350</p>
+              <p>info@marpasmontessori.com</p>
               <p className="text-sm mt-4">
                 <span className="text-background font-medium">Hours:</span><br />
                 Mon - Fri: 8:00 AM - 4:00 PM
