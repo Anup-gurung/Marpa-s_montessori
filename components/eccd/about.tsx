@@ -1,11 +1,37 @@
-import { Target, Eye, Heart, Lightbulb, Shield, Smile, Users } from "lucide-react"
+import Image from "next/image"
+import { Target, Eye, Heart, Lightbulb, Shield, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
-const coreValues = [
-  { icon: Lightbulb, label: "Creativity", color: "bg-sunshine text-foreground" },
-  { icon: Shield, label: "Safety", color: "bg-sky text-white" },
-  { icon: Users, label: "Respect", color: "bg-mint text-white" },
-  { icon: Smile, label: "Joyful Learning", color: "bg-coral text-white" },
+import lovingImage from "../../img/WhatsApp Image 2026-06-23 at 17.47.56.jpeg"
+import creativeImage from "../../img/WhatsApp Image 2026-06-23 at 17.48.19.jpeg"
+import socialImage from "../../img/WhatsApp Image 2026-06-23 at 17.48.31.jpeg"
+import safeSpaceImage from "../../img/WhatsApp Image 2026-06-23 at 17.52.06.jpeg"
+
+const imageTiles = [
+  {
+    src: lovingImage,
+    alt: "Marpa's Montessori loving community photo",
+    label: "Loving",
+    className: "md:col-span-1 md:row-span-2",
+  },
+  {
+    src: creativeImage,
+    alt: "Children performing creatively on stage",
+    label: "Creative",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    src: socialImage,
+    alt: "Children socializing outdoors",
+    label: "Social",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    src: safeSpaceImage,
+    alt: "Children enjoying a safe classroom environment",
+    label: "Safe Space",
+    className: "md:col-span-1 md:row-span-1",
+  },
 ]
 
 export function About() {
@@ -46,32 +72,33 @@ export function About() {
             </div>
           </div>
           
-          {/* Decorative Element */}
+          {/* Mosaic: large-left, three stacked-right */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-sky/20 rounded-3xl p-6 aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <Heart className="w-12 h-12 text-sky mx-auto mb-2" />
-                  <p className="font-semibold text-foreground">Loving Care</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Large left tile */}
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10 h-64 md:h-auto md:row-span-2">
+                <Image src={imageTiles[0].src} alt={imageTiles[0].alt} fill className="object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+                <div className="absolute inset-x-4 bottom-4">
+                  <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-white backdrop-blur-md border border-white/20">
+                    <span className="text-sm md:text-base font-semibold tracking-wide">{imageTiles[0].label}</span>
+                  </div>
                 </div>
               </div>
-              <div className="bg-coral/20 rounded-3xl p-6 aspect-square flex items-center justify-center mt-8">
-                <div className="text-center">
-                  <Lightbulb className="w-12 h-12 text-coral mx-auto mb-2" />
-                  <p className="font-semibold text-foreground">Creative Learning</p>
-                </div>
-              </div>
-              <div className="bg-mint/20 rounded-3xl p-6 aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <Users className="w-12 h-12 text-mint mx-auto mb-2" />
-                  <p className="font-semibold text-foreground">Social Skills</p>
-                </div>
-              </div>
-              <div className="bg-sunshine/30 rounded-3xl p-6 aspect-square flex items-center justify-center mt-8">
-                <div className="text-center">
-                  <Shield className="w-12 h-12 text-foreground mx-auto mb-2" />
-                  <p className="font-semibold text-foreground">Safe Space</p>
-                </div>
+
+              {/* Right column: three stacked tiles */}
+              <div className="flex flex-col gap-4">
+                {[imageTiles[1], imageTiles[2], imageTiles[3]].map((tile) => (
+                  <div key={tile.label} className="relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10 flex-1 min-h-[120px]">
+                    <Image src={tile.src} alt={tile.alt} fill className="object-cover object-center" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+                    <div className="absolute inset-x-4 bottom-4">
+                      <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-white backdrop-blur-md border border-white/20">
+                        <span className="text-sm md:text-base font-semibold tracking-wide">{tile.label}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -116,10 +143,14 @@ export function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Core Values</h3>
               <div className="flex flex-wrap gap-2">
-                {coreValues.map((value) => (
-                  <div key={value.label} className={`flex items-center gap-2 ${value.color} px-3 py-1.5 rounded-full`}>
-                    <value.icon className="w-4 h-4" />
-                    <span className="text-sm font-medium">{value.label}</span>
+                {[
+                  { label: "Loving", color: "bg-coral text-white" },
+                  { label: "Creative", color: "bg-sunshine text-foreground" },
+                  { label: "Social", color: "bg-mint text-white" },
+                  { label: "Safe Space", color: "bg-sky text-white" },
+                ].map((value) => (
+                  <div key={value.label} className={`px-3 py-1.5 rounded-full text-sm font-medium ${value.color}`}>
+                    {value.label}
                   </div>
                 ))}
               </div>
