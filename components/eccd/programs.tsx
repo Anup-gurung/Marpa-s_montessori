@@ -1,42 +1,43 @@
-import { Baby, BookOpen, Palette, Users } from "lucide-react"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+
+import infantProgramImage from "../../img/new.jpeg"
+import preschoolProgramImage from "../../img/new2.jpeg"
+import playBasedProgramImage from "../../img/new3.jpeg"
+import socialProgramImage from "../../img/new4.jpeg"
 
 const programs = [
   {
-    icon: Baby,
+    image: infantProgramImage,
     title: "Infant Care",
     description: "Focus on nurturing care, sensory exploration, and early bonding. Our infant program provides a warm, secure environment for babies aged 0-18 months.",
     ageRange: "0-18 months",
     color: "bg-rose",
     bgColor: "bg-rose/10",
-    iconColor: "text-rose",
   },
   {
-    icon: BookOpen,
+    image: preschoolProgramImage,
     title: "Preschool Education",
     description: "Early literacy, numbers, storytelling, and creative learning. Children develop foundational academic skills through engaging, age-appropriate activities.",
     ageRange: "3-5 years",
     color: "bg-sky",
     bgColor: "bg-sky/10",
-    iconColor: "text-sky",
   },
   {
-    icon: Palette,
+    image: playBasedProgramImage,
     title: "Play-Based Learning",
     description: "Learning through play, exploration, and imagination. Children discover the world around them through hands-on activities and creative expression.",
     ageRange: "2-4 years",
     color: "bg-coral",
     bgColor: "bg-coral/10",
-    iconColor: "text-coral",
   },
   {
-    icon: Users,
+    image: socialProgramImage,
     title: "Social & Emotional Development",
     description: "Helping children build confidence, teamwork, and communication skills. We foster emotional intelligence and positive relationships with peers.",
     ageRange: "2-6 years",
     color: "bg-mint",
     bgColor: "bg-mint/10",
-    iconColor: "text-mint",
   },
 ]
 
@@ -66,10 +67,15 @@ export function Programs() {
             >
               <CardContent className="p-0">
                 <div className="flex flex-col sm:flex-row">
-                  {/* Icon Section */}
+                  {/* Image Section */}
                   <div className={`${program.bgColor} p-6 sm:p-8 flex items-center justify-center sm:w-1/3`}>
-                    <div className={`w-20 h-20 rounded-3xl ${program.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <program.icon className="w-10 h-10 text-white" />
+                    <div className="relative w-20 h-20 rounded-3xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <Image
+                        src={program.image}
+                        alt={program.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
                   
@@ -77,7 +83,7 @@ export function Programs() {
                   <div className="p-6 sm:p-8 flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <h3 className="text-xl font-bold text-foreground">{program.title}</h3>
-                      <span className={`${program.bgColor} ${program.iconColor} text-xs font-medium px-2 py-1 rounded-full`}>
+                      <span className={`${program.bgColor} ${program.color.replace('bg-', 'text-')} text-xs font-medium px-2 py-1 rounded-full`}>
                         {program.ageRange}
                       </span>
                     </div>

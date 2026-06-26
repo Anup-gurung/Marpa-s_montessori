@@ -72,34 +72,28 @@ export function About() {
             </div>
           </div>
           
-          {/* Mosaic: large-left, three stacked-right */}
+          {/* Photo Grid */}
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Large left tile */}
-              <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10 h-64 md:h-auto md:row-span-2">
-                <Image src={imageTiles[0].src} alt={imageTiles[0].alt} fill className="object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-                <div className="absolute inset-x-4 bottom-4">
-                  <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-white backdrop-blur-md border border-white/20">
-                    <span className="text-sm md:text-base font-semibold tracking-wide">{imageTiles[0].label}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right column: three stacked tiles */}
-              <div className="flex flex-col gap-4">
-                {[imageTiles[1], imageTiles[2], imageTiles[3]].map((tile) => (
-                  <div key={tile.label} className="relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10 flex-1 min-h-[120px]">
-                    <Image src={tile.src} alt={tile.alt} fill className="object-cover object-center" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-                    <div className="absolute inset-x-4 bottom-4">
-                      <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-white backdrop-blur-md border border-white/20">
-                        <span className="text-sm md:text-base font-semibold tracking-wide">{tile.label}</span>
-                      </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-[140px] sm:auto-rows-[160px] md:auto-rows-[200px]">
+              {imageTiles.map((tile) => (
+                <div
+                  key={tile.label}
+                  className={`relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-black/10 h-full ${tile.className}`}
+                >
+                  <Image
+                    src={tile.src}
+                    alt={tile.alt}
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+                  <div className="absolute inset-x-4 bottom-4">
+                    <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-white backdrop-blur-md border border-white/20">
+                      <span className="text-sm md:text-base font-semibold tracking-wide">{tile.label}</span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -115,7 +109,11 @@ export function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Mission</h3>
               <p className="text-muted-foreground text-pretty">
-                Providing a safe and engaging learning environment that supports children&apos;s emotional, social, and intellectual growth through play-based education and individualized care.
+                Provide a child-centered learning environment.
+                Foster creativity, independence, and critical thinking.
+                Encourage respect for oneself, others, and the environment.
+                Promote holistic development—intellectual, emotional, physical, and social.
+                Build strong partnerships between the school, parents, and the community.
               </p>
             </CardContent>
           </Card>
@@ -129,8 +127,7 @@ export function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Vision</h3>
               <p className="text-muted-foreground text-pretty">
-                To build a strong foundation for every child through quality early childhood education, empowering them to become confident, curious, and compassionate learners.
-              </p>
+To nurture confident, compassionate, and lifelong learners who are equipped with the knowledge, skills, and values to thrive in an ever-changing world while preserving Bhutanese culture and traditions.              </p>
             </CardContent>
           </Card>
 
