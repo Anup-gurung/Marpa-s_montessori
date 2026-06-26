@@ -35,12 +35,14 @@ const features = [
 ]
 
 const highlights = [
-  "Clean and sanitized facilities",
-  "Age-appropriate furniture",
-  "Natural lighting",
-  "Ventilated classrooms",
-  "Secure entry systems",
-  "First aid trained staff",
+  "Individualized learning plans tailored to each child",
+  "Inclusive environment where every child belongs",
+  "Strong focus on measurable developmental progress",
+  "Daily Social-Emotional Learning (SEL) and life skills",
+  "Transparent communication with parents",
+  "Live CCTV access for added peace of mind",
+  "Regular progress monitoring and parent updates",
+  "Caring educators who nurture every child’s unique strengths"
 ]
 
 export function Environment() {
@@ -88,8 +90,9 @@ export function Environment() {
                 Why Parents Trust Us
               </h3>
               <p className="text-muted-foreground mb-6 text-pretty">
-                We take pride in maintaining the highest standards of safety, cleanliness, and care. Every detail of our facility is designed with your child&apos;s well-being in mind.
-              </p>
+At Marpa’s Montessori, every child is known, valued, and supported as an individual. We believe no child should be left behind. Through personalized learning, inclusive education, and close collaboration with families, we help every child reach their fullest potential.
+
+We focus not only on academics, but also on social-emotional learning, independence, communication, confidence, and life skills—creating meaningful and lasting outcomes for every child.</p>
               <div className="grid grid-cols-2 gap-3">
                 {highlights.map((item) => (
                   <div key={item} className="flex items-center gap-2">

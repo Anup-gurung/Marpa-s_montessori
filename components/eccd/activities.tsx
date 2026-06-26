@@ -1,69 +1,141 @@
-import { Sun, BookOpen, Palette, Cookie, TreePine, BookMarked, Music, Moon } from "lucide-react"
+import {
+  DoorOpen,
+  Users,
+  BookOpen,
+  GraduationCap,
+  Heart,
+  Trees,
+  Trophy,
+  Utensils,
+  Volume2,
+  Hand,
+  Smile,
+  Music,
+  Milk,
+  Moon,
+  Home,
+} from "lucide-react"
 
 const activities = [
   {
-    time: "8:00 AM",
-    title: "Morning Welcome",
-    description: "Greeting time with songs and warm welcomes",
-    icon: Sun,
+    time: "8:30 AM",
+    title: "Arrival & Free Play",
+    description: "Children arrive, settle in, and enjoy free play with friends.",
+    icon: DoorOpen,
     color: "bg-sunshine",
     textColor: "text-foreground",
   },
   {
     time: "9:00 AM",
-    title: "Learning Activities",
-    description: "Age-appropriate educational activities",
-    icon: BookOpen,
+    title: "Assembly & Circle Time",
+    description: "Morning greetings, songs, attendance, and daily discussions.",
+    icon: Users,
     color: "bg-sky",
     textColor: "text-white",
   },
   {
-    time: "10:00 AM",
-    title: "Creative Play",
-    description: "Arts, crafts, and imaginative play",
-    icon: Palette,
+    time: "9:30 AM",
+    title: "Story Time",
+    description: "Interactive storytelling to develop listening and imagination.",
+    icon: BookOpen,
     color: "bg-coral",
     textColor: "text-white",
   },
   {
-    time: "10:30 AM",
-    title: "Snack Time",
-    description: "Healthy snacks and social time",
-    icon: Cookie,
+    time: "9:45 AM",
+    title: "Learning Activities",
+    description: "Fun, age-appropriate educational activities and hands-on learning.",
+    icon: GraduationCap,
     color: "bg-rose",
     textColor: "text-white",
   },
   {
-    time: "11:00 AM",
-    title: "Outdoor Activities",
-    description: "Playground time and physical development",
-    icon: TreePine,
+    time: "10:50 AM",
+    title: "Yoga",
+    description: "Mindfulness, stretching, and simple yoga exercises.",
+    icon: Heart,
     color: "bg-mint",
     textColor: "text-white",
   },
   {
-    time: "12:00 PM",
-    title: "Storytelling",
-    description: "Interactive stories and reading time",
-    icon: BookMarked,
+    time: "11:20 AM",
+    title: "Outdoor Play",
+    description: "Fresh air, playground fun, and physical exploration.",
+    icon: Trees,
     color: "bg-sky",
     textColor: "text-white",
   },
   {
-    time: "1:00 PM",
-    title: "Music and Dance",
-    description: "Songs, movement, and rhythm activities",
+    time: "11:50 AM",
+    title: "Structured Sports",
+    description: "Team games and sports to build coordination and confidence.",
+    icon: Trophy,
+    color: "bg-coral",
+    textColor: "text-white",
+  },
+  {
+    time: "12:20 PM",
+    title: "Lunch Break",
+    description: "Healthy lunch followed by relaxation and social interaction.",
+    icon: Utensils,
+    color: "bg-sunshine",
+    textColor: "text-foreground",
+  },
+  {
+    time: "1:30 PM",
+    title: "Sound Class",
+    description: "Developing phonics, pronunciation, and early language skills.",
+    icon: Volume2,
+    color: "bg-rose",
+    textColor: "text-white",
+  },
+  {
+    time: "2:00 PM",
+    title: "Sensory Class",
+    description: "Hands-on sensory activities that stimulate creativity and learning.",
+    icon: Hand,
+    color: "bg-mint",
+    textColor: "text-white",
+  },
+  {
+    time: "2:30 PM",
+    title: "SEL (Social Emotional Learning)",
+    description: "Building emotional awareness, empathy, and social skills.",
+    icon: Smile,
+    color: "bg-sky",
+    textColor: "text-white",
+  },
+  {
+    time: "3:00 PM",
+    title: "Dance",
+    description: "Music, movement, and dance for fun and physical development.",
     icon: Music,
     color: "bg-coral",
     textColor: "text-white",
   },
   {
-    time: "2:00 PM",
-    title: "Nap Time",
-    description: "Quiet rest time for rejuvenation",
-    icon: Moon,
-    color: "bg-rose/60",
+    time: "3:30 PM",
+    title: "Milk Time",
+    description: "A nutritious milk break to recharge for the afternoon.",
+    icon: Milk,
+    color: "bg-rose",
     textColor: "text-white",
+  },
+  {
+    time: "4:00 PM",
+    title: "Resting & Fun Time",
+    description: "Quiet relaxation followed by light indoor activities.",
+    icon: Moon,
+    color: "bg-mint",
+    textColor: "text-white",
+  },
+  {
+    time: "4:30 PM",
+    title: "Pick-Up Time",
+    description: "Children prepare to head home with their parents or guardians.",
+    icon: Home,
+    color: "bg-sunshine",
+    textColor: "text-foreground",
   },
 ]
 
@@ -124,6 +196,18 @@ export function Activities() {
           </div>
         </div>
       </div>
+
+       <div className="text-center mb-12 md:mb-16">
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance pt-10">
+            Nap & Rest Policy
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-6xl mx-auto text-pretty">
+            At Marpa Montessori, we recognize that every child has unique rest and sleep needs. Rather than following a fixed nap schedule, we provide children with the opportunity to rest or sleep whenever they feel tired.
+
+We do not force or impose nap time on children. Instead, we create a calm, safe, and comfortable environment where they can choose to rest according to their individual needs. This child-centred approach respects each child’s natural rhythm while promoting their overall well-being, comfort, and healthy development.
+          </p>
+        </div>
     </section>
   )
 }

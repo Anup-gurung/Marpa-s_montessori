@@ -1,33 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
+
+import karmaImage from "../../img/teachers/karma.jpeg"
+import kezangImage from "../../img/teachers/kezang.jpeg"
 
 const teachers = [
   {
-    name: "Sonam Choden",
-    role: "Lead ECCD Teacher",
-    bio: "Dedicated to nurturing children through creative learning and emotional support. 8 years of experience in early childhood education.",
+    name: "Kezang Wangmo",
+    role: "Founder & Centre Director",
+    bio: "Kezang Wangmo is the Founder and Centre Director of Marpa's Montessori. She leads the centre's vision, curriculum, and daily operations, ensuring high-quality, inclusive early childhood education. Passionate about every child's growth, she mentors staff, partners with families, and fosters a safe, nurturing environment where children develop academically, socially, emotionally, and independently.",
     color: "bg-sky",
-    initial: "SC",
+    image: kezangImage,
   },
   {
-    name: "Tenzin Wangmo",
-    role: "Infant Care Specialist",
-    bio: "Passionate about providing loving care and sensory-rich experiences for our youngest learners. Certified in infant CPR and first aid.",
+    name: "Mrs. Karma Sonam",
+    role: "Administrator & Accounts Officer | SEN Support Assistant",
+    bio: "Mrs. Karma Sonam oversees the administrative and financial operations of Marpa's Montessori, managing admissions, accounts, parent communication, and daily administration. She also supports the Special Educational Needs (SEN) programme, helping create an inclusive and nurturing learning environment where every child receives the care and support they need to thrive.",
     color: "bg-coral",
-    initial: "TW",
-  },
-  {
-    name: "Karma Dema",
-    role: "Preschool Teacher",
-    bio: "Specializes in early literacy and numeracy through play-based learning. Creates engaging activities that spark curiosity.",
-    color: "bg-mint",
-    initial: "KD",
-  },
-  {
-    name: "Pema Yangzom",
-    role: "Creative Arts Teacher",
-    bio: "Brings creativity to life through art, music, and movement. Believes every child is an artist waiting to be discovered.",
-    color: "bg-rose",
-    initial: "PY",
+    image: karmaImage,
   },
 ]
 
@@ -58,8 +48,14 @@ export function Teachers() {
               <CardContent className="p-0">
                 {/* Avatar Section */}
                 <div className={`${teacher.color}/20 p-8 flex items-center justify-center`}>
-                  <div className={`w-24 h-24 rounded-full ${teacher.color} flex items-center justify-center text-white text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {teacher.initial}
+                  <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Image
+                      src={teacher.image}
+                      alt={`${teacher.name} portrait`}
+                      fill
+                      className="object-cover object-center"
+                      sizes="112px"
+                    />
                   </div>
                 </div>
                 

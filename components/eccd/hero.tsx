@@ -68,15 +68,15 @@ export function Hero() {
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 mt-12">
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-sunshine">500+</p>
+                <p className="text-3xl md:text-4xl font-bold text-sunshine">100+</p>
                 <p className="text-white/75 text-sm">Happy Children</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-coral">15+</p>
+                <p className="text-3xl md:text-4xl font-bold text-coral">8</p>
                 <p className="text-white/75 text-sm">Expert Teachers</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-mint">10+</p>
+                <p className="text-3xl md:text-4xl font-bold text-mint">5+</p>
                 <p className="text-white/75 text-sm">Years Experience</p>
               </div>
             </div>

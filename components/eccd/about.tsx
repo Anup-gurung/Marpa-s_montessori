@@ -109,12 +109,7 @@ export function About() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Mission</h3>
               <p className="text-muted-foreground text-pretty">
-                Provide a child-centered learning environment.
-                Foster creativity, independence, and critical thinking.
-                Encourage respect for oneself, others, and the environment.
-                Promote holistic development—intellectual, emotional, physical, and social.
-                Build strong partnerships between the school, parents, and the community.
-              </p>
+At Marpa Montessori, we are committed to providing high-quality, child-centred early childhood education through hands-on Montessori-inspired learning, play-based experiences, and individualized support.              </p>
             </CardContent>
           </Card>
 
@@ -145,6 +140,7 @@ To nurture confident, compassionate, and lifelong learners who are equipped with
                   { label: "Creative", color: "bg-sunshine text-foreground" },
                   { label: "Social", color: "bg-mint text-white" },
                   { label: "Safe Space", color: "bg-sky text-white" },
+                  { label: "Inclusion", color: "bg-rose text-white" },
                 ].map((value) => (
                   <div key={value.label} className={`px-3 py-1.5 rounded-full text-sm font-medium ${value.color}`}>
                     {value.label}
