@@ -1,124 +1,35 @@
-// "use client"
-
-// import { useState } from "react"
-// import { X } from "lucide-react"
-
-// const categories = ["All", "Classroom", "Outdoor", "Learning", "Events", "Celebrations"]
-
-// const galleryItems = [
-//   { id: 1, category: "Classroom", emoji: "📚", title: "Story Time", color: "bg-sky/20" },
-//   { id: 2, category: "Outdoor", emoji: "🌳", title: "Nature Walk", color: "bg-mint/20" },
-//   { id: 3, category: "Learning", emoji: "🔢", title: "Math Fun", color: "bg-coral/20" },
-//   { id: 4, category: "Events", emoji: "🎭", title: "Drama Day", color: "bg-rose/20" },
-//   { id: 5, category: "Celebrations", emoji: "🎂", title: "Birthday Party", color: "bg-sunshine/30" },
-//   { id: 6, category: "Classroom", emoji: "🎨", title: "Art Class", color: "bg-coral/20" },
-//   { id: 7, category: "Outdoor", emoji: "⚽", title: "Sports Day", color: "bg-mint/20" },
-//   { id: 8, category: "Learning", emoji: "🔬", title: "Science Fun", color: "bg-sky/20" },
-//   { id: 9, category: "Events", emoji: "🎪", title: "Fun Fair", color: "bg-sunshine/30" },
-//   { id: 10, category: "Celebrations", emoji: "🎊", title: "Graduation", color: "bg-rose/20" },
-//   { id: 11, category: "Classroom", emoji: "🎵", title: "Music Time", color: "bg-mint/20" },
-//   { id: 12, category: "Learning", emoji: "📖", title: "Reading Hour", color: "bg-sky/20" },
-// ]
-
-// export function Gallery() {
-//   const [activeCategory, setActiveCategory] = useState("All")
-//   const [selectedItem, setSelectedItem] = useState<typeof galleryItems[0] | null>(null)
-
-//   const filteredItems = activeCategory === "All" 
-//     ? galleryItems 
-//     : galleryItems.filter(item => item.category === activeCategory)
-
-//   return (
-//     <section id="gallery" className="py-16 md:py-24 bg-background">
-//       <div className="container mx-auto px-4">
-//         {/* Section Header */}
-//         <div className="text-center mb-12">
-//           <span className="inline-block bg-sky/20 text-sky px-4 py-1 rounded-full text-sm font-medium mb-4">
-//             Gallery
-//           </span>
-//           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-//             Moments of Joy & Learning
-//           </h2>
-//           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
-//             Take a glimpse into the wonderful activities and special moments at Marpa's Montessori Center.
-//           </p>
-//         </div>
-
-//         {/* Category Filter */}
-//         <div className="flex flex-wrap justify-center gap-2 mb-8">
-//           {categories.map((category) => (
-//             <button
-//               key={category}
-//               onClick={() => setActiveCategory(category)}
-//               className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-//                 activeCategory === category
-//                   ? "bg-sky text-white"
-//                   : "bg-card text-muted-foreground hover:bg-sky/20 hover:text-sky"
-//               }`}
-//             >
-//               {category}
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Gallery Grid */}
-//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-//           {filteredItems.map((item) => (
-//             <button
-//               key={item.id}
-//               onClick={() => setSelectedItem(item)}
-//               className={`${item.color} rounded-3xl aspect-square flex flex-col items-center justify-center p-4 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
-//             >
-//               <span className="text-5xl md:text-6xl mb-2 group-hover:scale-110 transition-transform">
-//                 {item.emoji}
-//               </span>
-//               <span className="text-foreground font-medium text-sm md:text-base text-center">
-//                 {item.title}
-//               </span>
-//               <span className="text-muted-foreground text-xs mt-1">{item.category}</span>
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Lightbox */}
-//         {selectedItem && (
-//           <div 
-//             className="fixed inset-0 bg-foreground/80 z-50 flex items-center justify-center p-4"
-//             onClick={() => setSelectedItem(null)}
-//           >
-//             <div 
-//               className="bg-card rounded-3xl max-w-lg w-full p-8 relative"
-//               onClick={(e) => e.stopPropagation()}
-//             >
-//               <button
-//                 onClick={() => setSelectedItem(null)}
-//                 className="absolute top-4 right-4 w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-muted-foreground/20 transition-colors"
-//               >
-//                 <X className="w-5 h-5 text-foreground" />
-//               </button>
-              
-//               <div className={`${selectedItem.color} rounded-2xl aspect-video flex items-center justify-center mb-6`}>
-//                 <span className="text-8xl">{selectedItem.emoji}</span>
-//               </div>
-              
-//               <h3 className="text-2xl font-bold text-foreground mb-2">{selectedItem.title}</h3>
-//               <p className="text-muted-foreground">
-//                 A wonderful moment from our {selectedItem.category.toLowerCase()} activities at Marpa's Montessori Center.
-//               </p>
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//     </section>
-//   )
-// }
-
 
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
+
+import celebrationImage from "../../img/galleryfolder/celebration.jpeg";
+import celebration2Image from "../../img/galleryfolder/celebration2.jpeg";
+import celebration3Image from "../../img/galleryfolder/celebration3.jpeg";
+import celebration4Image from "../../img/galleryfolder/celebtration4.jpeg";
+import celebration6Image from "../../img/galleryfolder/celebration6.jpeg";
+import classroomImage from "../../img/galleryfolder/classroom.jpeg";
+import classroom1Image from "../../img/galleryfolder/classroom1.jpeg";
+import classroom2Image from "../../img/galleryfolder/classroom2.jpeg";
+import classroom3Image from "../../img/galleryfolder/classroom3.jpeg";
+import eventImage from "../../img/galleryfolder/event.jpeg";
+import event2Image from "../../img/galleryfolder/event2.jpeg";
+import event3Image from "../../img/galleryfolder/event3.jpeg";
+import event5Image from "../../img/galleryfolder/event5.jpeg";
+import learning1Image from "../../img/galleryfolder/learning1.jpeg";
+import learning2Image from "../../img/galleryfolder/learning2.jpeg";
+import learning3Image from "../../img/galleryfolder/learning3.jpeg";
+import learning5Image from "../../img/galleryfolder/learning5.jpeg";
+import outdoorImage from "../../img/galleryfolder/outdoor.jpeg";
+import outdoor2Image from "../../img/galleryfolder/outdoor2.jpeg";
+import outdoor3Image from "../../img/galleryfolder/outdoor3.jpeg";
+import outdoor4Image from "../../img/galleryfolder/outdoor4.jpeg";
+import outdoor5Image from "../../img/galleryfolder/outdoor5.jpeg";
+import outdoor6Image from "../../img/galleryfolder/outdoor6.jpeg";
+import outdoor7Image from "../../img/galleryfolder/outdoor7.jpeg";
+import outdoor8Image from "../../img/galleryfolder/outdoor8.jpeg";
 
 const categories = [
   "All",
@@ -133,74 +44,152 @@ const galleryItems = [
   {
     id: 1,
     category: "Classroom",
-    title: "Story Time",
-    image: "./img/galleryfolder/clasroom",
+    title: "Classroom Moment",
+    image: classroomImage,
   },
   {
     id: 2,
-    category: "Outdoor",
-    title: "Nature Walk",
-    image: "/gallery/outdoor/nature-walk.jpg",
+    category: "Classroom",
+    title: "Classroom Activity",
+    image: classroom1Image,
   },
   {
     id: 3,
-    category: "Learning",
-    title: "Math Fun",
-    image: "/gallery/learning/math-fun.jpg",
+    category: "Classroom",
+    title: "Classroom Learning",
+    image: classroom2Image,
   },
   {
     id: 4,
-    category: "Events",
-    title: "Drama Day",
-    image: "/gallery/events/drama-day.jpg",
+    category: "Classroom",
+    title: "Classroom Play",
+    image: classroom3Image,
   },
   {
     id: 5,
-    category: "Celebrations",
-    title: "Birthday Party",
-    image: "/gallery/celebrations/birthday-party.jpg",
+    category: "Outdoor",
+    title: "Outdoor Play",
+    image: outdoorImage,
   },
   {
     id: 6,
-    category: "Classroom",
-    title: "Art Class",
-    image: "/gallery/classroom/art-class.jpg",
+    category: "Outdoor",
+    title: "Outdoor Fun",
+    image: outdoor2Image,
   },
   {
     id: 7,
     category: "Outdoor",
-    title: "Sports Day",
-    image: "/gallery/outdoor/sports-day.jpg",
+    title: "Outdoor Activity",
+    image: outdoor3Image,
   },
   {
     id: 8,
-    category: "Learning",
-    title: "Science Fun",
-    image: "/gallery/learning/science-fun.jpg",
+    category: "Outdoor",
+    title: "Outdoor Learning",
+    image: outdoor4Image,
   },
   {
     id: 9,
-    category: "Events",
-    title: "Fun Fair",
-    image: "/gallery/events/fun-fair.jpg",
+    category: "Outdoor",
+    title: "Outdoor Exploration",
+    image: outdoor5Image,
   },
   {
     id: 10,
-    category: "Celebrations",
-    title: "Graduation",
-    image: "/gallery/celebrations/graduation.jpg",
+    category: "Outdoor",
+    title: "Outdoor Group Time",
+    image: outdoor6Image,
   },
   {
     id: 11,
-    category: "Classroom",
-    title: "Music Time",
-    image: "/gallery/classroom/music-time.jpg",
+    category: "Outdoor",
+    title: "Outdoor Discovery",
+    image: outdoor7Image,
   },
   {
     id: 12,
+    category: "Outdoor",
+    title: "Outdoor Moment",
+    image: outdoor8Image,
+  },
+  {
+    id: 13,
     category: "Learning",
-    title: "Reading Hour",
-    image: "/gallery/learning/reading-hour.jpg",
+    title: "Learning Activity",
+    image: learning1Image,
+  },
+  {
+    id: 14,
+    category: "Learning",
+    title: "Learning Together",
+    image: learning2Image,
+  },
+  {
+    id: 15,
+    category: "Learning",
+    title: "Hands-on Learning",
+    image: learning3Image,
+  },
+  {
+    id: 16,
+    category: "Learning",
+    title: "Learning Moment",
+    image: learning5Image,
+  },
+  {
+    id: 17,
+    category: "Events",
+    title: "School Event",
+    image: eventImage,
+  },
+  {
+    id: 18,
+    category: "Events",
+    title: "Event Activity",
+    image: event2Image,
+  },
+  {
+    id: 19,
+    category: "Events",
+    title: "Event Moment",
+    image: event3Image,
+  },
+  {
+    id: 20,
+    category: "Events",
+    title: "Special Event",
+    image: event5Image,
+  },
+  {
+    id: 21,
+    category: "Celebrations",
+    title: "Celebration",
+    image: celebrationImage,
+  },
+  {
+    id: 22,
+    category: "Celebrations",
+    title: "Celebration Moment",
+    image: celebration2Image,
+  },
+  {
+    id: 23,
+    category: "Celebrations",
+    title: "Celebration Activity",
+    image: celebration3Image,
+  },
+  {
+    id: 24,
+    category: "Celebrations",
+    title: "Special Celebration",
+    image: celebration4Image,
+  },
+  {
+    id: 25,
+    category: "Celebrations",
+    title: "Celebration Day",
+    image: celebration6Image,
   },
 ];
 
