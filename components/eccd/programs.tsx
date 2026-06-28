@@ -1,41 +1,45 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
-import infantProgramImage from "../../img/new.jpeg"
-import preschoolProgramImage from "../../img/new2.jpeg"
-import playBasedProgramImage from "../../img/new3.jpeg"
-import socialProgramImage from "../../img/new4.jpeg"
+import playgroupProgramImage from "../../img/new.jpeg"
+import kindergartenProgramImage from "../../img/new2.jpeg"
+import afterSchoolProgramImage from "../../img/new3.jpeg"
+import seasonalProgramImage from "../../img/new4.jpeg"
 
 const programs = [
   {
-    image: infantProgramImage,
-    title: "Infant Care",
-    description: "Focus on nurturing care, sensory exploration, and early bonding. Our infant program provides a warm, secure environment for babies aged 0-18 months.",
-    ageRange: "0-18 months",
+    image: playgroupProgramImage,
+    title: "Busy Butterflies (Playgroup)",
+    description:
+      "Our Busy Butterflies programme provides a nurturing and play-based learning environment where young children develop social, emotional, cognitive, and motor skills through hands-on activities, storytelling, music, creative play, and guided exploration.",
+    ageRange: "2 years 8 months – 4 years",
     color: "bg-rose",
     bgColor: "bg-rose/10",
   },
   {
-    image: preschoolProgramImage,
-    title: "Preschool Education",
-    description: "Early literacy, numbers, storytelling, and creative learning. Children develop foundational academic skills through engaging, age-appropriate activities.",
-    ageRange: "3-5 years",
+    image: kindergartenProgramImage,
+    title: "Little Scientists (Kindergarten)",
+    description:
+      "The Little Scientists programme prepares children for primary school through inquiry-based learning, early literacy, numeracy, science exploration, creativity, and practical life activities that foster independence, confidence, and a lifelong love of learning.",
+    ageRange: "4 years – 5 years 6 months",
     color: "bg-sky",
     bgColor: "bg-sky/10",
   },
   {
-    image: playBasedProgramImage,
-    title: "Play-Based Learning",
-    description: "Learning through play, exploration, and imagination. Children discover the world around them through hands-on activities and creative expression.",
-    ageRange: "2-4 years",
+    image: afterSchoolProgramImage,
+    title: "After-School Club",
+    description:
+      "Designed for children from PP to Class 3, our After-School Club provides homework support, creative enrichment, educational games, reading, and recreational activities in a safe, caring, and engaging environment after school hours.",
+    ageRange: "6–10 years (PP – Class 3)",
     color: "bg-coral",
     bgColor: "bg-coral/10",
   },
   {
-    image: socialProgramImage,
-    title: "Social & Emotional Development",
-    description: "Helping children build confidence, teamwork, and communication skills. We foster emotional intelligence and positive relationships with peers.",
-    ageRange: "2-6 years",
+    image: seasonalProgramImage,
+    title: "Seasonal Enrichment Programmes",
+    description:
+      "Our Summer and Winter Engagement Programmes offer exciting educational experiences through arts, crafts, STEM activities, sports, outdoor exploration, cultural experiences, and team-building activities that keep children actively learning during school holidays.",
+    ageRange: "Available during school holidays",
     color: "bg-mint",
     bgColor: "bg-mint/10",
   },
@@ -83,7 +87,7 @@ export function Programs() {
                   <div className="p-6 sm:p-8 flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <h3 className="text-xl font-bold text-foreground">{program.title}</h3>
-                      <span className={`${program.bgColor} ${program.color.replace('bg-', 'text-')} text-xs font-medium px-2 py-1 rounded-full`}>
+                      <span className={`${program.bgColor} ${program.color.replace('bg-', 'text-')} text-xs font-medium px-6 py-1 rounded-full`}>
                         {program.ageRange}
                       </span>
                     </div>
