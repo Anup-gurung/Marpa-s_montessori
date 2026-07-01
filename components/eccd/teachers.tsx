@@ -61,6 +61,9 @@ const teachers = [
 ]
 
 export function Teachers() {
+  const ceo = teachers[0]
+  const otherTeachers = teachers.slice(1)
+
   return (
     <section id="teachers" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4">
@@ -77,9 +80,40 @@ export function Teachers() {
           </p>
         </div>
 
+        {/* CEO Section */}
+        <div className="mb-12 flex justify-center">
+          <Card 
+            className="border-0 shadow-lg rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group w-full max-w-sm"
+          >
+            <CardContent className="p-0">
+              {/* Avatar Section */}
+              <div className={`${ceo.color}/20 p-8 flex items-center justify-center`}>
+                <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Image
+                    src={ceo.image}
+                    alt={`${ceo.name} portrait`}
+                    fill
+                    className="object-cover object-center"
+                    sizes="112px"
+                  />
+                </div>
+              </div>
+              
+              {/* Info Section */}
+              <div className="p-6 text-center">
+                <h3 className="text-lg font-bold text-foreground mb-1">{ceo.name}</h3>
+                <p className={`text-sm font-medium mb-3`} style={{ color: `var(--${ceo.color.replace('bg-', '')})` }}>
+                  {ceo.role}
+                </p>
+                <p className="text-muted-foreground text-sm text-pretty">{ceo.bio}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Teachers Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teachers.map((teacher) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {otherTeachers.map((teacher) => (
             <Card 
               key={teacher.name}
               className="border-0 shadow-lg rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
